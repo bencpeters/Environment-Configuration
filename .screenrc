@@ -1,0 +1,15 @@
+setenv TERM xterm-256color
+termcapinfo xterm* ti@:te@
+autodetach on
+hardcopydir /tmp/
+startup_message off
+vbell off # tab-completion flash menu bar
+defscrollback 20000
+silencewait 15 # default: 30
+
+hardstatus alwayslastline "%{.kw}%-w%{.rW}%n %t%{-}%+w %=%{g} %H %{y} %d %M %c:%s "
+altscreen on
+
+screen -t top 10 nice -20 top
+screen -t vim 0 vim -O2
+screen 1
