@@ -77,3 +77,5 @@ alias screen=/usr/local/bin/screen
 alias reset_docker_dns='docker-machine ssh $(docker-machine active) "sudo udhcpc SIGUSR1 && sudo /etc/init.d/docker restart"'
 export NVM_DIR=~/.nvm
 source /usr/local/opt/nvm/nvm.sh
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -41,6 +41,7 @@ Plugin 'slim-template/vim-slim.git' " syntax hi-lighting for slim template
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ntpeters/vim-better-whitespace' " whitespace errors hilighting & fixing
 Plugin 'vim-scripts/ruby-matchit' " allow navigation using % for ruby blocks
+Plugin 'tpope/vim-endwise' " Automatically add 'end' in Ruby code
 
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
@@ -234,3 +235,6 @@ endfunction
 
 let pyindent_nested_paren="&sw*2"
 let pyindent_open_paren="&sw*2"
+
+" nesting matching for ruby
+runtime macros/matchit.vim
