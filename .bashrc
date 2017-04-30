@@ -5,7 +5,10 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-#Setup Path variable 
+export CUDA_HOME=/usr/local/cuda
+export DYLD_LIBRARY_PATH=$CUDA_HOME/lib
+
+#Setup Path variable
 for p in \
     /home/benpeters/bin \
     /usr/local/bin \
@@ -13,11 +16,13 @@ for p in \
     /opt/local/bin \
     /opt/local/sbin \
     /usr/local/mysql/bin \
+    $CUDA_HOME/bin \
     ; do
     [ -x $p ] && PATH=$p:$PATH
 done
 unset p
 export PATH=${PATH##:}:.
+
 
 # User specific aliases and functions
 #Shortcuts
@@ -79,3 +84,10 @@ export NVM_DIR=~/.nvm
 source /usr/local/opt/nvm/nvm.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Spark Stuff
+export SPARK_HOME="$HOME/spark-2.0.1-bin-hadoop2.7"
+export PYSPARK_SUBMIT_ARGS="--master local[2]"
+export PATH="$SPARK_HOME/bin":$PATH
+export PYSPARK_DRIVER_PYTHON="jupyter"
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"

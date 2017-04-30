@@ -42,6 +42,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'ntpeters/vim-better-whitespace' " whitespace errors hilighting & fixing
 Plugin 'vim-scripts/ruby-matchit' " allow navigation using % for ruby blocks
 Plugin 'tpope/vim-endwise' " Automatically add 'end' in Ruby code
+Plugin 'Yggdroot/indentLine' " Add visual indication of indentation
+Plugin 'alvan/vim-closetag' " Close HTML tags with '>'
 
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"

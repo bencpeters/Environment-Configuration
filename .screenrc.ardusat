@@ -1,0 +1,46 @@
+setenv TERM xterm-256color
+termcapinfo xterm* ti@:te@
+autodetach on
+hardcopydir /tmp/
+startup_message off
+vbell off # tab-completion flash menu bar
+defscrollback 20000
+silencewait 15 # default: 30
+
+hardstatus alwayslastline "%{.kw}%-w%{.rW}%n %t%{-}%+w %=%{g} %H %{y} %d %M %c:%s "
+altscreen on
+term screen-256color
+
+screen -t top 10 nice -20 htop
+
+screen -t vim 0
+select 0
+stuff "cd ~/Dev/ardusat/ardusat-web; vim -O2^M"
+
+screen -t web-bash 1
+select 1
+stuff "cd ~/Dev/ardusat/ardusat-web^M"
+
+screen -t "rails s" 2
+select 2
+stuff "cd ~/Dev/ardusat/ardusat-web; rails s^M"
+
+screen -t gulp 3
+select 3
+stuff "cd ~/Dev/ardusat/ardusat-web; sleep 10^Mnvm use 6; gulp watch^M"
+
+screen -t guard 4
+select 4
+stuff "cd ~/Dev/ardusat/ardusat-web^Mguard"
+
+screen -t psql 5
+select 5
+stuff "psql ardusat_dev^M"
+
+screen -t ep 6
+select 6
+stuff "cd ~/Dev/ardusat/experiment-platform; nvm use 0.10^Mgulp dev"
+
+screen -t compile 7
+select 7
+stuff "cd ~/Dev/ardusat/data-server; activate_miniconda; source activate ardusat-data^Mecho 'celery -A ardusat.compile.process worker -l debug -Q compilations &'; echo 'FLASK_APP=compile_server.py python -m flask run'^M"

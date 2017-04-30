@@ -74,3 +74,5 @@ miniconda
 pgadmin.log
 seaborn-data
 x-tools
+.s3cfg
+.v8flags*
