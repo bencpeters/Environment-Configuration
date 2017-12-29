@@ -76,3 +76,9 @@ seaborn-data
 x-tools
 .s3cfg
 .v8flags*
+.adobe/
+.filezilla/
+.pip/pip.log
+*Creative\ Cloud\ Files
+*.pub
+*.pyc
