@@ -17,6 +17,17 @@ screen -t vim 0
 select 0
 stuff "cd ~/Dev"
 
-screen -t bash
+screen -t python bash
 select 1
-stuff "cd ~/Dev"
+stuff "activate_miniconda^M conda info -e^M source activate "
+
+screen -t server
+select 2
+stuff "activate_miniconda^M source activate "
+
+screen -t console
+select 3
+stuff "activate_miniconda^M source activate "
+
+screen -t psql
+select 4
