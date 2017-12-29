@@ -29,8 +29,6 @@ export PATH=${PATH##:}:.
 alias la='ls -A'
 alias ll='ls -lsah'
 function cdl { cd $1; ls;}
-alias rm='rm -i'
-alias mv='mv -i'
 alias vimm='vim -O2'
 alias v='vim'
 alias ..='cd ..'
