@@ -90,3 +90,5 @@ Amazon\ Drive
 Arduino
 Wine\ Files
 spark-*-bin-*
+.tmux/plugins
+.tmux/resurrect
