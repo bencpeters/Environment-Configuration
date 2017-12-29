@@ -83,3 +83,10 @@ x-tools
 *.pub
 *.pyc
 .screenrc
+.lldb/lldb-history
+.logs
+.rediscli_history
+Amazon\ Drive
+Arduino
+Wine\ Files
+spark-*-bin-*
