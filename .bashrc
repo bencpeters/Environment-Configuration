@@ -66,13 +66,23 @@ stty stop undef # to unmap ctrl-s
 
 complete -C aws_completer aws
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+### Homebrew Autocomplete
+if type brew 2&>/dev/null; then
+  for COMPLETION in $(brew --prefix)/etc/bash_completion.d/*
+  do
+    [[ -f $COMPLETION ]] && source "$COMPLETION"
+  done
+  if [[ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]];
+  then
+    source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+  fi
+fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # added by Miniconda 3.8.3 installer
 alias activate_miniconda='export PATH="/Users/benpeters/miniconda/bin:$PATH"'
+alias activate_anaconda='export PATH="/Users/benpeters/anaconda3/bin:$PATH"'
 ulimit -S -n 2048
 
 alias screen=/usr/local/bin/screen
@@ -92,3 +102,6 @@ export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 
 # log bash command history
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export EDITOR='vim'
